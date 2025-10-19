@@ -1,0 +1,15 @@
+.idea
+data
+__pycache__
+.DS_Store
+py3
+py3.9
+~*
+.coverage
+coverage.xml
+output
+htmlcov
+dist/
+build/
+
+.env

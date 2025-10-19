@@ -1,0 +1,38 @@
+[tool.black]
+line-length = 88
+target-version = ['py39', 'py310', 'py311', 'py312', 'py313']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | venv
+  | dist
+  | build
+  | __pycache__
+  | \.mypy_cache
+  | \.pytest_cache
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.mypy]
+exclude = [
+    "^dist/.*",
+    "^build/.*",
+    "^\\.venv/.*",
+    "^venv/.*",
+    "^setup\\.py$",
+    "^scripts/lint/.*",
+]
+ignore_missing_imports = true
+disallow_untyped_defs = false
+warn_return_any = false

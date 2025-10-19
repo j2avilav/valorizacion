@@ -1,0 +1,30 @@
+services:
+
+  mariadb:
+    image: mariadb:10.6
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: valorizacion_db
+      MYSQL_USER: valorizacion_user
+      MYSQL_PASSWORD: valorizacion_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_DB: valorizacion_db
+      POSTGRES_USER: valorizacion_user
+      POSTGRES_PASSWORD: valorizacion_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  mariadb_data:
+  postgres_data:
